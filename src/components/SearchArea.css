@@ -1,0 +1,11 @@
+.searchArea {
+    height: 73px;
+    width: fit-content;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: top;
+    justify-content: space-around;
+    box-shadow: 2px 2px 5px gray;
+}

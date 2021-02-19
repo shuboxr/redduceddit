@@ -1,0 +1,81 @@
+.post-detail {
+    background-color: yellow;
+    width: 300px;
+    height: max-content;
+    border: 1px solid black;
+    padding: .5em;
+    margin-top: .5em;
+}
+
+h2 {
+    margin: 0;
+    width: 67%;
+    height: max-content;
+    text-align: center;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    flex: 3 1 0;
+}
+
+.detail-ups {
+    color: dimgray;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.detail-header {
+    display: flex;
+    box-sizing: border-box;
+    padding: .25em;
+    border: 1px solid black;
+    width: 100%;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+
+.detail-body {
+    flex-shrink: 1;
+    overflow-y: scroll;
+    margin-top: 0;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    background-color: rgb(250,250,250);
+    padding: 3px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-height: 600px;
+    white-space: pre-line;
+    width: max-content;
+    max-width: 100%;
+}
+
+.detail-time {
+    font-size: 12px;
+    color: dimgray;
+    margin-block-start: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+img {
+    width: 100%;
+}
+
+.thumbnail-link {
+    width: 100%;
+}
+
+.thumbnail {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+    flex: 2 1 0;
+}

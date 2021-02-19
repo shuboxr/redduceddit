@@ -1,0 +1,62 @@
+.post {
+    color: rgb(50,50,50);
+    width: 95%;
+    margin: 10px auto;
+    height: 30px;
+    padding: 0 4px;
+    background-color: rgb(250,250,250);
+    border: 1px solid rgb(200,200,200);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+span {
+    flex-shrink: 0;
+}
+
+.ups {
+    color: dimgrey;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    min-width: 46px;
+    flex: 0 0 0;
+}
+
+.title {
+    margin-left: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: min-content;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 4px;
+    padding: 1px 4px;
+    color: darkslateblue;
+    font-weight: 700;
+    flex: 1 1 0;
+}
+
+.time {
+    color: dimgray;
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 5px;
+    width: 40px;
+    min-width: 40px;
+    flex: 0 0 0;
+}
+
+.body {
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    width: 10px;
+    flex: 1 1 0;
+}
