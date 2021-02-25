@@ -58,15 +58,22 @@ function App() {
     setActiveFilter(fil);
   }
 
-  const asyncSearch = async (term) => {
-    const response = await fetch(term ==='popular' ? 'https://www.reddit.com/r/popular.json' : `https://www.reddit.com/search.json?q=${term}`);
+  const search = async (term) => {
+    const response = await fetch(term ==='popular' ? 'http://www.reddit.com/r/popular.json' : `http://www.reddit.com/search.json?q=${term}`);
     const jsonResponse = await response.json();
     const newPosts = await jsonResponse.data.children.map(child => {
-      let img = child.data.secure_media === null ? child.data.url_overridden_by_dest : child.data.thumbnail;
+      let img = '';
+      if (child.data.is_reddit_media_domain && child.data.secure_media === null && !child.data.crosspost_parent_list) {
+        img = child.data.url_overridden_by_dest
+      } else {
+        if (child.data.thumbnail != 'default') {
+          img = child.data.thumbnail;
+        };
+      }
       return {
         title: child.data.title,
         author: child.data.author,
-        selftext: child.data.selftext,
+        selftext: child.data.selftext.replace(/&amp;#x200B;/g, ' '),
         permalink: `http://reddit.com/${child.data.permalink}`,
         thumbnail: img,
         ups: child.data.ups,
@@ -75,14 +82,9 @@ function App() {
         id: child.data.id
       };
     });
+    setActivePost(null);
+    setSearchTerm(term);
     setPosts(newPosts);
-    console.log(newPosts);
-  }
-
-  const search = (term) => {
-    asyncSearch(term).then(() => {
-      setSearchTerm(term);
-    });
   }
 
   useEffect(() => {
@@ -90,10 +92,8 @@ function App() {
   }, [posts]);
 
   const activatePost = (id) => {
-    if (activePost) {
-      setActivePost(null);
-    }
     if (activePost && activePost.id === id) {
+      setActivePost(null);
       return;
     }
     const foundPost = filteredPosts.find(post => {
@@ -110,7 +110,7 @@ function App() {
       </header>
       <main>
         <SearchResults posts={filteredPosts} term={searchTerm} filter={activeFilter} activate={activatePost} />
-        {activePost ? <PostDetail post={activePost} /> : ''}
+        {activePost ? <PostDetail deactivate={activatePost} post={activePost} /> : ''}
       </main>
     </div>
   );
