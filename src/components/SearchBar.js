@@ -22,8 +22,8 @@ export function SearchBar(props) {
 
     return (
         <form className="search-bar">
-            <input placeholder="Search Reddit" type="text" onChange={handleChange} onKeyPress={handleEnter} />
-            <button className="search-button" onClick={handleClick} >Search</button>
+            <input placeholder="Enter search term" size={16} type="text" onChange={handleChange} onKeyPress={handleEnter} />
+            <button className="search-button" onClick={handleClick} >Search Reddit</button>
         </form>
     )
 }

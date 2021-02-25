@@ -60,3 +60,21 @@ span {
     width: 10px;
     flex: 1 1 0;
 }
+
+@media only screen and (max-width: 1000px) {
+  .body, .title {
+      font-size: 20px;
+  }
+
+  .ups, .time {
+      font-size: 14px;
+  }
+
+  .post {
+      height: 35px;
+  }
+
+  .body {
+      height: 25px;
+  }
+}

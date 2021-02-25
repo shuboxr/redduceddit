@@ -1,7 +1,15 @@
 .search-bar {
     height: 40px;
-    padding-top: 20px;
+    padding-top: 7px;
     text-align: center;
+}
+
+.search-bar * {
+    font-size: 18px;
+}
+
+input {
+    border-radius: 4px;
 }
 
 .search-button {

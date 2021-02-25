@@ -1,11 +1,13 @@
-.searchArea {
+.search-area {
     height: 73px;
     width: fit-content;
+    flex-shrink: 1;
     margin: 5px auto;
     padding: 5px;
     border-radius: 5px;
     display: flex;
     align-items: top;
     justify-content: space-around;
-    box-shadow: 2px 2px 5px gray;
+    box-shadow: 2px 2px 5px white;
+    background-color: white;
 }

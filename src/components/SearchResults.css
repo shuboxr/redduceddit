@@ -1,9 +1,8 @@
 .search-results {
-    background-color: coral;
-    border: 1px solid black;
+    background-image: linear-gradient(to top left, yellow, cyan);
     width: 600px;
     height: 600px;
-    padding: 0 .5em;
+    padding: 0 .5em 5px .5em;
     margin-top: 5px;
     border-radius: 4px;
     display: flex;
@@ -11,33 +10,34 @@
     flex-shrink: 1;
     max-width: 95%;
     min-height: 0;
+    box-shadow: 2px 2px 5px white;
 }
 
 .posts {
     overflow-y: scroll;
     height: 100%;
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom right, red, yellow);
 }
 
 .filter-text {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 20px;
+    padding: 2px;
 }
 
 .number {
-    color: white
+    font-weight: 800;
 }
 
-p {
+.results-label {
     margin-bottom: 0;
+    padding: 2px;
+    font-weight: 600;
 }
 
-p > a {
-    font-weight: 700;
-    color: black;
-}
-
-p > em {
+.results-label  > em {
     font-weight: 700;
 }
 
@@ -51,5 +51,34 @@ hr {
     .search-results {
         position: absolute;
         z-index: 0;
+        font-size: 18px;
+    }
+
+    .filter-text {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-height: 770px) {
+    .search-results {
+        height: 570px;
+    }
+}
+
+@media only screen and (max-height: 720px) {
+    .search-results {
+        height: 520px;
+    }
+}
+
+@media only screen and (max-height: 670px) {
+    .search-results {
+        height: 470px;
+    }
+}
+
+@media only screen and (max-height: 620px) {
+    .search-results {
+        height: 420px;
     }
 }
